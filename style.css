@@ -1,0 +1,75 @@
+*::before,
+*::after,
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(20, 33, 61);
+  color: rgb(229, 229, 229);
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.container {
+  height: 450px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  -webkit-box-shadow: 5px 5px 15px 5px #000000;
+  box-shadow: 5px 5px 15px 5px #000000;
+}
+
+.container__header {
+  height: 225px;
+  padding: 0.5rem 2rem 0.5rem 2rem;
+}
+
+.container__body {
+  height: 225px;
+}
+
+.meter {
+  height: 2rem;
+  width: 90%;
+  border: 3px solid rgb(252, 163, 17);
+  border-radius: 0.25em;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.meter::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: calc(1% * var(--strength, 0));
+  background-color: rgb(255, 191, 86);
+  border-radius: 0.25rem;
+  transition: width 500ms;
+}
+
+.password {
+  margin: 2rem auto 2rem auto;
+  width: 90%;
+  padding: 0.25rem 0.75rem;
+  background-color: rgb(1, 25, 96);
+  color: white;
+  border: 1px solid rgb(255, 255, 255);
+  outline: none;
+  border-radius: 0.3rem;
+}
+
+.password:focus {
+  border-color: rgb(88, 130, 255);
+}
+
+.tips > * {
+  margin-top: 0.5rem;
+  color: rgb(255, 255, 255);
+}
